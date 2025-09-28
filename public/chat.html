@@ -964,16 +964,16 @@
 
             try {
                 // Call your API endpoint with session ID
-                const response = await fetch(`http://46.101.144.159:3147/${currentCharacter}`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ 
-                        message: message,
-                        sessionId: currentSessionId 
-                    })
-                });
+                const response = await fetch(`/api/chat/${currentCharacter}`, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ 
+        message: message,
+        sessionId: currentSessionId 
+    })
+});
 
                 if (!response.ok) {
                     throw new Error("API request failed");
